@@ -1,21 +1,25 @@
 const { writeFileSync } = require('fs');
+const colors = require('colors');
 
-const crearArchivo = async (base = 5) => {
+const crearArchivo = async (base = 5, hasta = 10, listar = false) => {
   try {
-    console.log('=================');
-    console.log(`   Tabla del ${ base } `);
-    console.log('=================');
-
     const fileName = `Tabla-del-${ base }.txt`;
     let data = '';
+    let consola = '';
 
-    for (let index = 1; index <= 10; index++) {
+    for (let index = 1; index <= hasta; index++) {
       data += `${ base } x ${ index } = ${ base * index }\n`;
+      consola += `${ base } ${ 'x'.brightGreen } ${ index } ${ '='.brightGreen } ${ base * index }\n`;
     }
 
-    console.log(data);
+    if (listar) {
+      console.log(colors.bgBlack.brightGreen('================='));
+      console.log(colors.bgBlack.brightGreen(`   Tabla del ${ colors.brightBlue(base) } `));
+      console.log(colors.bgBlack.brightGreen('================='));
+      console.log(colors.bgBlack.brightBlue(consola));
+    }
 
-    writeFileSync(fileName, data);
+    writeFileSync(`./data/${ fileName }`, data);
     return fileName;
   } catch (err) {
     throw err;

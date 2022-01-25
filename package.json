@@ -1,0 +1,23 @@
+{
+  "name": "bases-app",
+  "version": "0.0.1",
+  "description": "Aplicación para aprender las bases de nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jotorres060/bases-app-nodejs.git"
+  },
+  "author": "Jorge Torres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jotorres060/bases-app-nodejs/issues"
+  },
+  "homepage": "https://github.com/jotorres060/bases-app-nodejs#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^17.3.1"
+  }
+}
